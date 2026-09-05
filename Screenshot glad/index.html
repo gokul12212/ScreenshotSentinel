@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Screenshot Sentinel - a visual authenticity screening prototype." />
+  <title>Screenshot Sentinel | Authenticity Screening</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#top" aria-label="Screenshot Sentinel home">
+        <span class="brand-mark">SS</span>
+        <span><strong>Screenshot</strong><small>Sentinel</small></span>
+      </a>
+
+      <nav class="side-nav" aria-label="Primary navigation">
+        <a class="nav-item active" href="#scanner"><span class="nav-icon">⌁</span>New scan</a>
+        <a class="nav-item" href="#how-it-works"><span class="nav-icon">?</span>How it works</a>
+        <a class="nav-item" href="#about"><span class="nav-icon">i</span>About project</a>
+      </nav>
+
+      <div class="sidebar-note">
+        <span class="status-dot"></span>
+        <div><strong>Local & private</strong><p>Your image stays in this browser.</p></div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="top">
+      <header class="topbar">
+        <div class="breadcrumb">Research prototype <span>/</span> Image intelligence</div>
+        <div class="topbar-badge"><span class="pulse"></span> System ready</div>
+      </header>
+
+      <section class="hero" id="scanner">
+        <div class="hero-copy">
+          <p class="eyebrow">VISUAL AUTHENTICITY SCREENING</p>
+          <h1>Can this screenshot<br /><em>be trusted?</em></h1>
+          <p class="hero-text">Upload an image and inspect the visual signals behind a fast, explainable authenticity estimate.</p>
+        </div>
+        <div class="hero-stamp"><span>01</span><span>Upload</span><span>Inspect</span><span>Decide</span></div>
+      </section>
+
+      <section class="scanner-grid">
+        <div class="upload-panel panel">
+          <div class="panel-heading">
+            <div><span class="section-number">01</span><h2>Submit evidence</h2></div>
+            <span class="file-limit">JPG · PNG · WEBP</span>
+          </div>
+          <label class="drop-zone" id="dropZone" for="fileInput">
+            <input id="fileInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
+            <div class="upload-icon">↑</div>
+            <strong>Drop an image here</strong>
+            <span>or click to browse from your device</span>
+            <small>Maximum file size: 15 MB</small>
+          </label>
+          <div class="privacy-line"><span>⌾</span> Analysis runs locally. Nothing is uploaded to a server.</div>
+        </div>
+
+        <div class="preview-panel panel">
+          <div class="panel-heading">
+            <div><span class="section-number">02</span><h2>Visual sample</h2></div>
+            <span class="analysis-state" id="analysisState">Waiting</span>
+          </div>
+          <div class="preview-frame" id="previewFrame">
+            <div class="empty-preview"><span>◌</span><p>Your image preview<br />will appear here</p></div>
+            <img id="previewImage" alt="Uploaded image preview" />
+          </div>
+          <div class="file-summary" id="fileSummary"><span>No evidence selected</span><span>—</span></div>
+        </div>
+      </section>
+
+      <section class="result-panel panel" id="results" aria-live="polite">
+        <div class="result-topline">
+          <div><span class="section-number">03</span><h2>Screening result</h2></div>
+          <span class="result-disclaimer">Prototype estimate · not a legal verdict</span>
+        </div>
+        <div class="result-empty" id="resultEmpty"><span class="result-lock">⌁</span><strong>Awaiting an image</strong><p>Submit evidence above to generate an explainable report.</p></div>
+        <div class="result-content" id="resultContent">
+          <div class="score-block"><div class="score-ring"><span id="scoreValue">--</span><small>/100</small></div><div><p class="eyebrow">AUTHENTICITY INDEX</p><h3 id="resultTitle">Inconclusive</h3><p id="resultDescription">Upload an image to begin.</p></div></div>
+          <div class="signals" id="signals"></div>
+        </div>
+      </section>
+
+      <section class="lower-grid" id="how-it-works">
+        <div class="method-panel panel">
+          <p class="eyebrow">THE METHOD</p><h2>A transparent first pass.</h2>
+          <p>This student prototype combines file-level checks with visual inspection cues. Every signal is shown so a reviewer can understand how the estimate was formed.</p>
+          <div class="method-steps"><span><b>01</b> File check</span><span><b>02</b> Pixel scan</span><span><b>03</b> Explain</span></div>
+        </div>
+        <div class="about-panel panel" id="about"><div class="quote-mark">“</div><p>Authenticity is a question of evidence, not just appearance.</p><small>SCREENSHOT SENTINEL · ACADEMIC PROJECT</small></div>
+      </section>
+
+      <footer><span>Screenshot Sentinel v1.0</span><span>Built for responsible digital literacy</span></footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
